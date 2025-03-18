@@ -34,7 +34,7 @@ def check_format(file_path):
     for column in COLUMNS:
         if submission[column].isna().any():
             logging.error("NA value in file {} in column {}".format(file_path, column))
-        return False
+            return False
     
     if not submission['label'].isin(range(0, 2)).all():
         logging.error("Unknown Label in file {}".format(file_path))
